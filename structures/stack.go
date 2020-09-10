@@ -1,5 +1,9 @@
 package structures
 
+type Stack struct {
+	items []interface{}
+}
+
 func NewStack(v interface{}) *Stack {
 	s := new(Stack)
 	s.items = append(s.items, v)

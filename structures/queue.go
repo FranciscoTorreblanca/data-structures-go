@@ -1,5 +1,9 @@
 package structures
 
+type Queue struct {
+	items []interface{}
+}
+
 func NewQueue(v interface{}) *Queue {
 	q := new(Queue)
 	q.items = append(q.items, v)

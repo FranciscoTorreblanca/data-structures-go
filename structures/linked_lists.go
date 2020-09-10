@@ -2,6 +2,10 @@ package structures
 
 import "fmt"
 
+type LinkedList struct {
+	root *LinkedListNode
+}
+
 func NewLinkedList(v interface{}) *LinkedList {
 	ll := new(LinkedList)
 	ll.root = &LinkedListNode{value: v, next: nil}
