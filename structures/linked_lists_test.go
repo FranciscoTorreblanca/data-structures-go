@@ -30,9 +30,9 @@ func TestLinkedList(t *testing.T) {
 	if l := ll.Length(); l != 3 {
 		t.Errorf("Lenght(): %v; want %v", l, 3)
 	}
-	// ll.Remove()
+	ll.Remove()
 
-	// if l := ll.Length(); l != 2 {
-	// 	t.Errorf("Length(): %v; want %v", l, 2)
-	// }
+	if l := ll.Length(); l != 2 {
+		t.Errorf("Length(): %v; want %v", l, 2)
+	}
 }
