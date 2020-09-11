@@ -1,5 +1,9 @@
 name: Go checks
-on: ["pull_request"]
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    types: [opened, synchronize, reopened]
 
 jobs:
   go_coverage:
