@@ -1,5 +1,5 @@
 name: Go checks
-on: [push]
+on: ["push"]
 
 jobs:
   go_coverage:
