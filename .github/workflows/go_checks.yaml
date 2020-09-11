@@ -15,19 +15,17 @@ jobs:
           go-version: "1.14"
 
       - name: Install dependencies
+        env:
+          GO111MODULE: off
         run: |
           go mod download
+          go get github.com/mattn/goveralls
 
       - name: Run tests
         run: |
           go test -race -covermode atomic -coverprofile=covprofile ./...
 
-      - name: Install goveralls
-        env:
-          GO111MODULE: off
-        run: go get github.com/mattn/goveralls
-
-      - name: Send coverage
+      - name: Report coverage
         env:
           COVERALLS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: $(go env GOPATH)/bin/goveralls -coverprofile=covprofile -service=github
