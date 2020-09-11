@@ -15,9 +15,9 @@ func TestStack(t *testing.T) {
 	if s.items[0] != sv1 {
 		t.Errorf("NewStack(%v): %v; want %v", sv1, s.items[0], sv1)
 	}
-	if fi := s.First(); fi != sv1 {
-		t.Errorf("First(): %v; want %v", fi, sv1)
-	}
+	// if fi := s.First(); fi != sv1 {
+	// 	t.Errorf("First(): %v; want %v", fi, sv1)
+	// }
 
 	s.Add(sv2)
 	s.Add(sv3)
