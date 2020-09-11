@@ -32,4 +32,10 @@ func TestQueue(t *testing.T) {
 	if l := q.Length(); l != 2 {
 		t.Errorf("Length(): %v; want %v", l, 2)
 	}
+
+	q.Remove()
+	q.Remove()
+	if l := q.Last(); l != nil {
+		t.Errorf("Last(): %v; want %v", l, nil)
+	}
 }
