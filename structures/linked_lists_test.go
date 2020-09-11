@@ -6,7 +6,8 @@ import (
 
 const (
 	v1 = 1
-	v2 = 2
+	v2 = "2"
+	v3 = false
 )
 
 func TestLinkedList(t *testing.T) {
@@ -19,15 +20,19 @@ func TestLinkedList(t *testing.T) {
 	}
 
 	ll.Add(v2)
-	if ln := ll.Last(); ln.value != v2 {
-		t.Errorf("Last(): %v; want %v", ln.value, v2)
+	ll.Add(v3)
+	if nn := ll.root.Next(); nn.value != v2 {
+		t.Errorf("Next(): %v; want %v", nn.value, v2)
 	}
-	if l := ll.Length(); l != 2 {
-		t.Errorf("Lenght(): %v; want %v", l, 2)
+	if ln := ll.Last(); ln.value != v3 {
+		t.Errorf("Last(): %v; want %v", ln.value, v3)
+	}
+	if l := ll.Length(); l != 3 {
+		t.Errorf("Lenght(): %v; want %v", l, 3)
 	}
 	ll.Remove()
 
-	if l := ll.Length(); l != 1 {
-		t.Errorf("Length(): %v; want %v", l, 1)
+	if l := ll.Length(); l != 2 {
+		t.Errorf("Length(): %v; want %v", l, 2)
 	}
 }

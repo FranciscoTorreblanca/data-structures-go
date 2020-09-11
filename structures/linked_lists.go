@@ -1,7 +1,5 @@
 package structures
 
-import "fmt"
-
 type LinkedList struct {
 	root *LinkedListNode
 }
@@ -17,9 +15,6 @@ type LinkedListNode struct {
 	next  *LinkedListNode
 }
 
-func (n *LinkedListNode) String() string {
-	return fmt.Sprintf("%v", n.value)
-}
 func (n *LinkedListNode) Next() *LinkedListNode {
 	return n.next
 }
